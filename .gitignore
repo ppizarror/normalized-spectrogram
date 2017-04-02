@@ -3,3 +3,9 @@ data/
 
 # Matlab asv file
 *.asv
+
+# Related documents
+pasten_cp.pdf
+
+# Other matlab files
+test.m
