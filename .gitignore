@@ -1,2 +1,5 @@
 # Data folder
 data/
+
+# Matlab asv file
+*.asv
