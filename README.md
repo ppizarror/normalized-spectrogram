@@ -9,8 +9,13 @@ Normalized spectrogram to seismic acceleration written in *Matlab*. The algorith
 > 5. Each element of spectrum is normalized by maximum epsectral amplitude.
 ```
 
+## The function
 
-## Usage
+The normalized spectrogram function is defined by:
+
+```matlab
+matrix = normspectrogram(t, acc, regname)
+```
 
 ## Licence
 This project is licenced under GPLv2 (GNU General Public License, version 2) [https://www.gnu.org/licenses/gpl-2.0.html].

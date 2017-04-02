@@ -1,7 +1,8 @@
-function matrix = normspectrogram(t, acc)
-% NORMSPECTROGRAM(T, ACC) 
-%   t: Time array
-%   acc: Acceleration array
+function matrix = normspectrogram(t, acc, regname)
+% NORMSPECTROGRAM(T, ACC)
+%   t:       Time array
+%   acc:     Acceleration array (g)
+%   regname: Name of the seismic file
 %
 % This function create a normalized spectrogram matrix by doing the following
 % algorithm:
@@ -31,8 +32,10 @@ function matrix = normspectrogram(t, acc)
 % Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 %% Constantes
-WINDOW_TIME = 5;
-WINDOW_TIME_MOVEMENT = 2.5;
+MAX_FREQ = 14; % Max frequency of the matrix
+NORMALIZE = true; % Do normalize windows
+WINDOW_TIME = 5; % Time of each window
+WINDOW_TIME_MOVEMENT = 2.5; % Movement of the windows
 
 %% Check that length of arrays is the same
 tlen = length(t);
@@ -47,15 +50,141 @@ if tlen < 2
 end
 
 %% Calculate dt
-dt = t(2)-t(1)
+dt = t(2) - t(1);
+if dt == 0
+    error('dt is zero');
+end
 
-%% Check that vector length are greather
+%% Check that vector length are greater than WINDOW_TIME/dt
+win_size = WINDOW_TIME / dt;
+if tlen < win_size
+    error('Length of vectors does not meet minimal requierements');
+end
+
+%% Create frequency array
+f = 1 / dt;
+freq_arr = 0:f / win_size:f - 1 / win_size;
+fsize = 0;
+for i = 1:length(freq_arr)
+    if freq_arr(i) < MAX_FREQ
+        fsize = fsize + 1;
+    else
+        break
+    end
+end
+
+%% Create matrix
+
+% Calculate matrix length by time
+t_ini = 0;
+tarrsize = 1;
+while true
+t_ini = t_ini + WINDOW_TIME_MOVEMENT;
+    if t_ini + WINDOW_TIME > t(end)
+        break;
+    end
+    tarrsize = tarrsize + 1;
+end
+
+% Create matrix
+matrix = zeros(fsize, tarrsize);
+matrix_t = linspace(0, t(end), tarrsize);
+matrix_f = linspace(0, MAX_FREQ, fsize);
+
+%% Create tuckey window (r=5%)
+tuckey = tukeywin(win_size, 0.05);
 
 %% Create 5-seconds windows overlapped by 2.5 seconds
 t_ini = 0; % Initial time
+t_indx = 1; % Index of initial time on t array
+u = 1; % Number of window
 while true
     
+    % Create window and acceleration window
+    t_win = zeros(win_size, 1);
+    acc_win = zeros(win_size, 1);
+    
+    % Copy data to window from t_ini to t_ini + WINDOW_TIME
+    j = 1; % Index from t_win and acc_win arrays
+    tmed_found = false; % If tmed_index is found
+    for i = t_indx:t_indx + win_size - 1
+        
+        % Find index of next t_ini
+        if ~tmed_found && t(i) >= t_ini + WINDOW_TIME_MOVEMENT
+            t_indx = i;
+            tmed_found = true;
+        end
+        
+        % Store elements to windows
+        t_win(j) = t(i);
+        acc_win(j) = acc(i);
+        j = j + 1;
+    end
+    
+    %% Baseline correction
+    acc_win = detrend(acc_win, 0);
+    
+    %% Apply tuckey window
+    acc_win = acc_win .* tuckey;
+    
+    %% FFT
+    acc_fft = fft(acc_win);
+    
+    %% Average 5-point smooth
+    acc_fft = smooth(acc_fft);
+    
+    %% Calculate amplitude and normalize
+    acc_fft = abs(acc_fft);
+    acc_max = max(acc_fft);
+    if NORMALIZE
+        acc_norm = acc_fft ./ acc_max;
+    else
+        acc_norm = acc_fft; %#ok<*UNRCH>
+    end
+    
+    %% Store data to matrix
+    for freq = 1:fsize
+        matrix(freq, u) = acc_norm(freq);
+    end
+    
+    % Advance initial window time
+    t_ini = t_ini + WINDOW_TIME_MOVEMENT;
+    if t_ini + WINDOW_TIME > t(end)
+        break;
+    end
+    
+    u = u + 1;
+    
 end
+
+%% If regname is not defined
+if ~exist('regname', 'var')
+    regname = '';
+end
+
+%% Plot matrix
+figure();
+
+% Plot matrix
+subplot(2, 1, 1);
+title(regname);
+hold on;
+pcolor(matrix_t, matrix_f, matrix); shading interp; % Plot colormap
+[~, h] = contour(matrix_t, matrix_f, matrix, [0.8, 0.8]); % Plot contour at 80%
+h.LineWidth = 0.5;
+h.LineColor = 'red';
+hold off;
+ylabel('frequency (Hz)');
+xlim([0 matrix_t(end)]);
+ylim([0.4 matrix_f(end)]);
+
+% Plot seismic
+subplot(2, 1, 2);
+plot(t, acc, 'k');
+xlabel('Time (s)');
+ylabel('a (g)');
+xlim([0 t(end)]);
+grid on;
 
 end
 
