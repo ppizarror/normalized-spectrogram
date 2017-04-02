@@ -61,7 +61,7 @@ Lets suppose that a seismic registry is stored on *data/CNV_APED_201604162359_N_
 Then:
 
 ```matlab
-$ Load the data
+% Load the data
 data = load('data/CNV_APED_201604162359_N_100.txt');
 
 % Set time and acceleration array
