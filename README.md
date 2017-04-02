@@ -3,10 +3,10 @@ Normalized spectrogram to seismic acceleration written in *Matlab*. The algorith
 
 ```
 1. Baseline correction
-> 2. Tuckey window is applied with r=5%.
-> 3. FFT on window signal.
-> 4. Spectrum is smoothed by 5 points halfwidth moving average.
-> 5. Each element of spectrum is normalized by maximum epsectral amplitude.
+2. Tuckey window is applied with r=5%.
+3. FFT on window signal.
+4. Spectrum is smoothed by 5 points halfwidth moving average.
+5. Each element of spectrum is normalized by maximum epsectral amplitude.
 ```
 
 ## The function
