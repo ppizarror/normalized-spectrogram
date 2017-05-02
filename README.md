@@ -87,8 +87,8 @@ Obtaining:
 <img src="https://raw.githubusercontent.com/ppizarror/ppizarror.github.io/master/resources/images/normalized-spectrogram/figure.png" width="50%px" height="50%px">
 </p>
 
-## Licence
-This project is licenced under GPLv2 (GNU General Public License, version 2) [https://www.gnu.org/licenses/gpl-2.0.html].
+## License
+This project is licensed under GPLv2 (GNU General Public License, version 2) [https://www.gnu.org/licenses/gpl-2.0.html].
 
 ## Author
 Author: Pablo Pizarro, 2017.<br>
