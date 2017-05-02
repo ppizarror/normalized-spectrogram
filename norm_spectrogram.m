@@ -10,7 +10,7 @@ function [matrix, varargout] = norm_spectrogram(t, acc)
 %       4. Spectrum is smoothed by 5 points halfwidth moving average.
 %       5. Each element of spectrum is normalized by maximum epsectral
 %          amplitude.
-% 
+%
 % Usage:
 %   matrix = normspectrogram(t, acc)
 %   [matrix, matrix_t, matrix_f] = normspectrogram(t, acc)
@@ -82,7 +82,7 @@ end
 t_ini = 0;
 tarrsize = 1;
 while true
-t_ini = t_ini + WINDOW_TIME_MOVEMENT;
+    t_ini = t_ini + WINDOW_TIME_MOVEMENT;
     if t_ini + WINDOW_TIME > t(end)
         break;
     end

@@ -47,15 +47,15 @@ h.LineWidth = 0.5;
 h.LineColor = 'red';
 hold off;
 ylabel('frequency (Hz)');
-xlim([0 mt(end)]);
-ylim([0.4 mf(end)]);
+xlim([0, mt(end)]);
+ylim([0.4, mf(end)]);
 
 %% Plot seismic
 subplot(2, 1, 2);
 plot(t, acc, 'k');
 xlabel('Time (s)');
 ylabel('a (g)');
-xlim([0 t(end)]);
+xlim([0, t(end)]);
 grid on;
 
 end
