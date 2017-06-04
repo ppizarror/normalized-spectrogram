@@ -35,7 +35,8 @@ if ~exist('regname', 'var')
 end
 
 %% Plot matrix
-figure();
+f = figure();
+set(f, 'Visible', 'off');
 
 %% Plot matrix
 subplot(2, 1, 1);
@@ -57,6 +58,10 @@ xlabel('Time (s)');
 ylabel('a (g)');
 xlim([0, t(end)]);
 grid on;
+
+%% Show plot
+set(f, 'Visible', 'on');
+movegui(f, 'center');
 
 end
 
