@@ -29,7 +29,7 @@ This function returns a **matrix** in where columns refer to mean window time (*
 To print matrix you should use:
 
 ```matlab
-[matrix, matrix_t, matrix_f] = plot_norm_matrix(m, mt, mf, t, acc, regname)
+plot_norm_matrix(m, mt, mf, t, acc, regname)
 ```
 
 Where:
