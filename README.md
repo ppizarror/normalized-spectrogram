@@ -24,7 +24,6 @@ Where:
 | t | Time of the seismic accelerogram |
 | acc | Acceleration (g) of the seismic accelerogram |
 
-
 This function returns a **matrix** in where columns refer to mean window time (**matrix_t**), rows are the frequency of the spectrogram (**matrix_f**) and the value of the matrix are the amplitude of the spectrogram from each time-window on each frequency.
 
 To print matrix you should use:
