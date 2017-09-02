@@ -86,12 +86,12 @@ plot_norm_matrix(m, mt, mf, t, acc, 'APED 2016/04/16 23:59 N-S');
 Obtaining:
 
 <p align="center">
-<img src="http://ppizarror.com/resources/images/normalized-spectrogram/figure.png" width="70%">
+<img src="http://ppizarror.com/resources/images/normalized-spectrogram/figure.png" width="70%" >
 </p>
 
 ## License
 This project is licensed under GPLv2 (GNU General Public License, version 2) [https://www.gnu.org/licenses/gpl-2.0.html].
 
 ## Author
-<a href="http://ppizarror.com">Pablo Pizarro R.</a>, 2017.<br>
+<a href="http://ppizarror.com">Pablo Pizarro R.</a> | 2017.<br>
 Acknowledgments to Felipe Ochoa.
