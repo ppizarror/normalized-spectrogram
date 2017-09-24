@@ -1,0 +1,37 @@
+{
+    "PROJECT": {
+        "NAME": "Normalized spectrogram",
+        "ICON": {
+            "IMAGE": "http://ppizarror.com/resources/other/matlab.png",
+            "ALT": "Normalized spectrogram",
+            "WIDTH": 200,
+            "HEIGHT": 200
+        },
+        "URL": "",
+        "URL_TITLE": ""
+    },
+    "AUTHOR": {
+        "NAME": "Pablo Pizarro R.",
+        "URL": "http://ppizarror.com",
+        "ALT": "ppizarror",
+        "DATE": "2017",
+        "SECTION": {
+            "TITLE": "Author",
+            "SHOW": true
+        }
+    },
+    "DESCRIPTION": "Normalized spectrogram of seismic acceleration",
+    "BADGES": {
+        "0": {
+            "IMAGE": "http://ppizarror.com/badges/author.svg",
+            "HREF": "http://ppizarror.com",
+            "ALT": "@ppizarror"
+        },
+        "1": {
+            "IMAGE": "http://ppizarror.com/badges/licensegpl2.svg",
+            "HREF": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+            "ALT": "GPL V2.0"
+        }
+    },
+    "CONTENT": "readme.content.md"
+}
