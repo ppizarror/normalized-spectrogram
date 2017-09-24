@@ -20,7 +20,7 @@
             "SHOW": true
         }
     },
-    "DESCRIPTION": "Normalized spectrogram of seismic acceleration",
+    "DESCRIPTION": "Normalized spectrogram of a seismic acceleration",
     "BADGES": {
         "0": {
             "IMAGE": "http://ppizarror.com/badges/author.svg",

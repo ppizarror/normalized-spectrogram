@@ -2,7 +2,7 @@
   <img alt="Normalized spectrogram" src="http://ppizarror.com/resources/other/matlab.png" width="200px" height="200px" />
   <br /><br />
   Normalized spectrogram</h1>
-<p align="center">Normalized spectrogram of seismic acceleration</p>
+<p align="center">Normalized spectrogram of a seismic acceleration</p>
 <div align="center"><a href="http://ppizarror.com"><img alt="@ppizarror" src="http://ppizarror.com/badges/author.svg" /></a>
 <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"><img alt="GPL V2.0" src="http://ppizarror.com/badges/licensegpl2.svg" /></a>
 </div><br />
