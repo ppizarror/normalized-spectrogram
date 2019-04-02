@@ -19,7 +19,7 @@ function [matrix, varargout] = norm_spectrogram(t, acc)
 %   t:       Time array
 %   acc:     Acceleration array (g)
 %
-% Author: Pablo Pizarro @ppizarror.com, 2017.
+% Author: Pablo Pizarro @ppizarror.com, 2017-2019.
 %
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
