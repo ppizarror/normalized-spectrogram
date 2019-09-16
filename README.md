@@ -1,10 +1,10 @@
 <h1 align="center">
-  <img alt="Normalized spectrogram" src="https://ppizarror.com/resources/other/matlab.png" width="200px" height="200px" />
+  <img alt="Normalized spectrogram" src="https://res.ppizarror.com/other/matlab.png" width="200px" height="200px" />
   <br /><br />
   Normalized spectrogram</h1>
 <p align="center">Normalized spectrogram of a seismic acceleration</p>
-<div align="center"><a href="https://ppizarror.com"><img alt="@ppizarror" src="https://ppizarror.com/badges/author.svg" /></a>
-<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"><img alt="GPL V2.0" src="https://ppizarror.com/badges/licensegpl2.svg" /></a>
+<div align="center"><a href="https://ppizarror.com"><img alt="@ppizarror" src="https://res.ppizarror.com/badges/author.svg" /></a>
+<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"><img alt="GPL V2.0" src="https://res.ppizarror.com/badges/licensegpl2.svg" /></a>
 </div><br />
 
 Normalized spectrogram to seismic acceleration written in *Matlab*. The algorithm used is the following:
@@ -18,6 +18,7 @@ Normalized spectrogram to seismic acceleration written in *Matlab*. The algorith
 ```
 
 ## The function
+
 The normalized spectrogram function is defined by:
 
 ```matlab
@@ -42,15 +43,16 @@ plot_norm_matrix(m, mt, mf, t, acc, regname)
 Where:
 
 | Variable | Description |
-| :-: | :--|
-|  m |  	 Normalized matrix |
-|   mt|     Time array from matrix|
-|   mf|      Frequency array from matrix|
-|   t|      Time of the seismic data|
-|   acc|    Acceleration of seismic data|
-|   regname|Name of the seismic data (plot title)|
+| :-: | :-- |
+| m | Normalized matrix |
+| mt | Time array from matrix |
+| mf | Frequency array from matrix |
+| t | Time of the seismic data |
+| acc | Acceleration of seismic data |
+| regname | Name of the seismic data (plot title) |
 
 ## Example
+
 Lets suppose that a seismic registry is stored on *data/CNV_APED_201604162359_N_100.txt*, the file structure is like:
 
 ```
@@ -89,11 +91,13 @@ plot_norm_matrix(m, mt, mf, t, acc, 'APED 2016/04/16 23:59 N-S');
 Obtaining:
 
 <p align="center">
-<img src="http://ppizarror.com/resources/images/normalized-spectrogram/figure.png" width="70%" >
+<img src="https://res.ppizarror.com/images/normalized-spectrogram/figure.png" width="70%" >
 </p>
 
 ## License
+
 This project is licensed under GPLv2 [https://www.gnu.org/licenses/gpl-2.0.html]
+
 
 ## Author
 <a href="https://ppizarror.com" title="ppizarror">Pablo Pizarro R.</a> | 2017 - 2019

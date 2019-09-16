@@ -2,7 +2,7 @@
     "PROJECT": {
         "NAME": "Normalized spectrogram",
         "ICON": {
-            "IMAGE": "https://ppizarror.com/resources/other/matlab.png",
+            "IMAGE": "https://res.ppizarror.com/other/matlab.png",
             "ALT": "Normalized spectrogram",
             "WIDTH": 200,
             "HEIGHT": 200
@@ -23,12 +23,12 @@
     "DESCRIPTION": "Normalized spectrogram of a seismic acceleration",
     "BADGES": {
         "0": {
-            "IMAGE": "https://ppizarror.com/badges/author.svg",
+            "IMAGE": "https://res.ppizarror.com/badges/author.svg",
             "HREF": "https://ppizarror.com",
             "ALT": "@ppizarror"
         },
         "1": {
-            "IMAGE": "https://ppizarror.com/badges/licensegpl2.svg",
+            "IMAGE": "https://res.ppizarror.com/badges/licensegpl2.svg",
             "HREF": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
             "ALT": "GPL V2.0"
         }
