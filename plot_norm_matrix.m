@@ -39,7 +39,7 @@ f = figure();
 set(f, 'Visible', 'off');
 
 %% Plot matrix
-subplot(2, 1, 1);
+handle(1)=subplot(2, 1, 1);
 title(regname);
 hold on;
 pcolor(mt, mf, m); shading interp; % Plot colormap
@@ -52,7 +52,7 @@ xlim([0, mt(end)]);
 ylim([0.4, mf(end)]);
 
 %% Plot seismic
-subplot(2, 1, 2);
+handle(2)=subplot(2, 1, 2);
 plot(t, acc, 'k');
 xlabel('Time (s)');
 ylabel('a (g)');
@@ -62,6 +62,6 @@ grid on;
 %% Show plot
 set(f, 'Visible', 'on');
 movegui(f, 'center');
-
+linkaxes(handle,'x')
 end
 
