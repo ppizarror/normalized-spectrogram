@@ -82,7 +82,7 @@ plot_norm_matrix(m, mt, mf, t, acc, 'APED 2016/04/16 23:59 N-S');
 Obtaining:
 
 <p align="center">
-<img src="https://res.ppizarror.com/images/normalized-spectrogram/figure.png" width="70%" >
+<img src="https://raw.githubusercontent.com/ppizarror/normalized-spectrogram/master/.github/images/figure.png" width="70%" >
 </p>
 
 ## License

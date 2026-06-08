@@ -1,10 +1,7 @@
-<h1 align="center">
-  <img alt="Normalized spectrogram" src="https://res.ppizarror.com/other/matlab.png" width="200px" height="200px" />
-  <br /><br />
-  Normalized spectrogram</h1>
+<h1 align="center">Normalized spectrogram</h1>
 <p align="center">Normalized spectrogram of a seismic acceleration</p>
-<div align="center"><a href="https://ppizarror.com"><img alt="@ppizarror" src="https://res.ppizarror.com/badges/author.svg" /></a>
-<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"><img alt="GPL V2.0" src="https://res.ppizarror.com/badges/licensegpl2.svg" /></a>
+<div align="center"><a href="https://ppizarror.com"><img alt="@ppizarror" src="https://img.shields.io/badge/Author-Pablo%20Pizarro%20R.-9f9f9f" /></a>
+<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"><img alt="GPL V2.0" src="https://img.shields.io/badge/License-GPL--2.0-007ec6" /></a>
 </div><br />
 
 Normalized spectrogram to seismic acceleration written in *Matlab*. The algorithm used is the following:
@@ -91,7 +88,7 @@ plot_norm_matrix(m, mt, mf, t, acc, 'APED 2016/04/16 23:59 N-S');
 Obtaining:
 
 <p align="center">
-<img src="https://res.ppizarror.com/images/normalized-spectrogram/figure.png" width="70%" >
+<img src="https://raw.githubusercontent.com/ppizarror/normalized-spectrogram/master/.github/images/figure.png" width="70%" >
 </p>
 
 ## License
